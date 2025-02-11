@@ -6,6 +6,8 @@ import { users } from "../../../public/data/users";
 interface User{
     id:number;
     username:string;
+    //eslint-disable-next-line @typescript-eslint/no-explicit-any
+    avatar:any
 }
 
 interface AuthContextType{
