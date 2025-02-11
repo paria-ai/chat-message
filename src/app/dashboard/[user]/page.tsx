@@ -37,12 +37,12 @@ const DashboardUser = () => {
 
         const pusher =new Pusher('57b73c62d5ab9f5c78e4',{
             cluster:'mt1',
-            useTLS:true,
+           forceTLS:true,
         });
 
         const channel = pusher.subscribe('my-channel');
 
-        channel.bind('messages',function(data){
+        channel.bind('messages',(data:{message:Message})=>{
             setMessages((prevMessages)=>[...prevMessages,data.message]);
         });
         
